@@ -1,3 +1,4 @@
+from resources import *
 from telegram.ext import Updater, CommandHandler
 
 def welcome(update, context):
@@ -6,7 +7,7 @@ def welcome(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def main():
-    token = '1199113916:AAH0UqtxjAiXA7ad6kWuBAFlGIz6D59rhAM'
+    token = TOKEN
     updater = Updater(token=token, use_context=True)
 
     updater.dispatcher.add_handler(CommandHandler('start', welcome))
